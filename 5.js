@@ -17,7 +17,7 @@ function writeOneMillionTimes(writer, data) {
         // Don't pass the callback, because we're not done yet.
         ok = writer.write(data);
         if(ok===false){
-          console.log('不能再写了')
+          console.log('不能再写了,水太多了')
         }
       }
     } while (i > 0 && ok);
@@ -25,7 +25,7 @@ function writeOneMillionTimes(writer, data) {
       // Had to stop early!
       // Write some more once it drains.
       writer.once('drain', ()=>{
-        console.log('干涸了')
+        console.log('干涸了，水走了')
         write()
       });
     }
