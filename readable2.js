@@ -12,7 +12,7 @@ const inStream = new Readable({
 })
 
 inStream.currentCharCode = 65 // A
-inStream.pipe(process.stdout)
+inStream.pipe(process.stdout) // read会被process.stdout不停de调用
 
 // inStream.push('AAAAAAA')
 // inStream.push('BBBBBBBB') // 默认可读的数据是暂停态，不会发出去，只有ondata才会发出去
